@@ -168,25 +168,6 @@
     observeThumbs();
   }
 
-  const CHANGELOG = `## [30.0.0] — ${new Date().getFullYear()}
-
-### Added
-- +10 % modrosti, +20 % samozavesti
-- Nov feature: "ne, sem prestar za to" (deprecated takoj ob izidu)
-- Podpora za kolesarske ture brez časovne omejitve
-
-### Changed
-- Zabava: iz "do 5h zjutraj" na "do 1h, potem spat"
-- Snapchat → Instagram → ??? (v razvoju)
-
-### Fixed
-- Odstranjenih 29 bugov iz prejšnjih verzij
-- Kava se ne ohladi več med debugiranjem (delno)
-
-### Known issues
-- Hrbet občasno vrže warning pri vstajanju
-- Rojstni dnevi se še vedno ponavljajo letno — WONTFIX 💛`;
-
   function renderFinal() {
     const sec = el('section', 'final'); sec.id = 'final';
     if (state.solved < TOTAL) {
@@ -204,11 +185,9 @@
     let first = true;
     for (const p of fin.sporocilo) { if (!p.trim()) continue; letter.appendChild(el('p', first ? 'greet' : null, p)); first = false; }
     letter.appendChild(el('p', 'sig', fin.podpis));
-    const cl = el('div', 'term changelog');
-    const bar = el('div', 'term-bar'); bar.append(el('i'), el('i'), el('i'), el('span', null, 'CHANGELOG.md'));
-    cl.append(bar, el('pre', null, CHANGELOG));
     const more = el('button', 'btn btn-yellow', '🎉 Še več konfetov'); more.type = 'button'; more.addEventListener('click', party);
-    inner.append(el('p', 'hero-kicker', '$ sudo ./party.sh'), title, letter, cl, more);
+    letter.appendChild(more);
+    inner.append(el('p', 'hero-kicker', '$ sudo ./party.sh'), title, letter);
     sec.append(el('div', 'tape'), inner, el('div', 'tape'));
     if ('IntersectionObserver' in window) {
       let fired = false;
