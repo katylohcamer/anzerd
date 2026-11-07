@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>anze.exe — v30.0.0</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23111'/><text x='32' y='44' font-family='monospace' font-weight='700' font-size='34' text-anchor='middle' fill='%23fce300'>30</text></svg>">
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body>
+
+<!-- ============ BOOT ============ -->
+<div id="boot" class="boot" aria-hidden="true">
+  <div class="boot-term">
+    <div class="term-bar"><i></i><i></i><i></i><span>anze@life: ~</span></div>
+    <pre id="boot-text"></pre>
+    <button id="boot-go" class="btn btn-yellow" hidden>Začni ▶</button>
+  </div>
+</div>
+
+<div class="tape tape-top" aria-hidden="true"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <p class="hero-kicker">$ ./anze.exe --version</p>
+  <div class="hero-num" aria-hidden="true"><span>3</span><span>0</span></div>
+  <h1>Vse najboljše, <span id="ime">Anže</span>!</h1>
+  <p class="hero-sub">Pred tabo je <span class="js-total">11</span> zaklenjenih poglavij spominov, od najstarejših do najnovejših.<br>
+     Vsako poglavje odklene <strong>ena uganka</strong>. Brez preskakovanja. Brez Stack Overflowa. 😏</p>
+
+  <div class="progress" role="progressbar" aria-valuemin="0">
+    <div class="progress-label"><span>dešifrirano</span><span id="progress-txt">0/11</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0"></div></div>
+  </div>
+
+  <a class="btn btn-yellow hero-cta" id="hero-cta" href="#level-1">Začni dešifrirati ↓</a>
+  <a class="btn btn-ghost hero-cta" id="hero-final" href="#final" hidden>Na konec 🎉</a>
+</header>
+
+<!-- ============ TIMELINE ============ -->
+<main class="timeline" id="timeline">
+  <p class="loading">dešifriram …</p>
+</main>
+
+<footer class="footer">
+  <p>made with 💛, HTML in malo preveč kave · <button id="reset" type="button">reset napredka</button></p>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lb" class="lb" hidden>
+  <button class="lb-close" type="button" aria-label="Zapri">✕</button>
+  <button class="lb-prev" type="button" aria-label="Prejšnja">‹</button>
+  <figure class="lb-fig">
+    <div class="lb-media"></div>
+    <figcaption><span class="lb-cap"></span></figcaption>
+  </figure>
+  <button class="lb-next" type="button" aria-label="Naslednja">›</button>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<noscript><p style="text-align:center;padding:40px">Ta stran potrebuje JavaScript. Seveda. 😏</p></noscript>
+
+<script src="assets/levels.js?v=4"></script>
+<script src="assets/app.js?v=4"></script>
+</body>
+</html>
